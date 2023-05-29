@@ -7,7 +7,6 @@ exports.compress = (imagePath, compressedImagePath, callback) =>{
         .toFile(compressedImagePath, (err, info) => {
             if (err) {
               console.error(err);
-              console.log("coucou")
               // Traitez les erreurs de compression d'image ici
               return false;
             }
@@ -15,10 +14,5 @@ exports.compress = (imagePath, compressedImagePath, callback) =>{
             // Supprimez l'ancienne image non compressée
             fs.unlinkSync(imagePath);
             callback(err, info);
-    
-            // Mettez à jour l'URL de l'image avec le chemin vers l'image compressée
-    
-            // Sauvegardez le livre dans la base de données
-            
           });
 }
