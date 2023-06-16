@@ -4,10 +4,11 @@ const booksRoutes = require ("./routes/books");
 const mongoose = require ("mongoose");
 const path = require("path");
 const crypto = require("crypto");
+require('dotenv').config();
 
 const app = express();
 
-mongoose.connect('mongodb+srv://tommauboussin:PrimeR6_KC@cluster0.9uwmcej.mongodb.net/?retryWrites=true&w=majority',
+mongoose.connect(process.env.MONGODB_URI,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
